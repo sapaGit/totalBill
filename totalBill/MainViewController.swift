@@ -18,6 +18,9 @@ class MainViewController: UIViewController {
         return label
     }()
     
+    let totalBillView = TotalBillView()
+    
+    
     let logoImageView: UIImageView = {
        let imageView = UIImageView()
         imageView.image = UIImage(named: "logo")
@@ -50,6 +53,8 @@ class MainViewController: UIViewController {
         view.addSubview(titleLabel)
         view.addSubview(logoImageView)
         view.addSubview(descriptionLabel)
+        view.addSubview(totalBillView)
+        
     }
 
 }
@@ -69,6 +74,11 @@ extension MainViewController {
             descriptionLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             descriptionLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 10),
             descriptionLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -10),
+            
+            totalBillView.topAnchor.constraint(equalTo: descriptionLabel.bottomAnchor, constant: 10),
+            totalBillView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
+            totalBillView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
+            totalBillView.heightAnchor.constraint(equalToConstant: 150)
         ])
     }
 }
