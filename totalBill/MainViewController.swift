@@ -50,7 +50,7 @@ extension MainViewController {
             
             logoImageView.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 10),
             logoImageView.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.5),
-            logoImageView.heightAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.5),
+            logoImageView.heightAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.3),
             logoImageView.centerXAnchor.constraint(equalTo: view.centerXAnchor)
             
         ])
