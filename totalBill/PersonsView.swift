@@ -1,33 +1,29 @@
 //
-//  TotalBillView.swift
+//  PersonsView.swift
 //  totalBill
 //
-//  Created by Sergey Pavlov on 24.08.2022.
+//  Created by Sergey Pavlov on 25.08.2022.
 //
 
 import UIKit
 
-class TotalBillView: UIView {
+class PersonsView: UIView {
    
     let titleLabel: UILabel = {
         let label = UILabel()
-        label.text = "Total Bill"
+        label.text = "Persons"
         label.textColor = #colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1)
         label.font = UIFont(name: "Avenir Next", size: 14)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
     
-    let summTextField: UITextField = {
-        let textField = UITextField()
-        textField.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
-        textField.layer.cornerRadius = 10
-        textField.textColor = .black
-        textField.font = UIFont(name: "Avenir Next Bold", size: 48)
-        textField.textAlignment = .center
-        textField.keyboardType = .numberPad
-        textField.translatesAutoresizingMaskIntoConstraints = false
-        return textField
+    let backgroundGrayView: UIView = {
+        let view = UIView()
+        view.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+        view.layer.cornerRadius = 10
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
     }()
     
     override init(frame: CGRect) {
@@ -45,7 +41,7 @@ class TotalBillView: UIView {
         translatesAutoresizingMaskIntoConstraints = false
         
         addSubview(titleLabel)
-        addSubview(summTextField)
+        addSubview(backgroundGrayView)
     }
     
     func setConstraints() {
@@ -53,12 +49,13 @@ class TotalBillView: UIView {
             titleLabel.topAnchor.constraint(equalTo: topAnchor, constant: 0),
             titleLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 10),
             
-            summTextField.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 2),
-            summTextField.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 0),
-            summTextField.trailingAnchor.constraint(equalTo: trailingAnchor, constant: 0),
-            summTextField.heightAnchor.constraint(equalToConstant: 100)
+            backgroundGrayView.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 2),
+            backgroundGrayView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 0),
+            backgroundGrayView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: 0),
+            backgroundGrayView.heightAnchor.constraint(equalToConstant: 100)
 
         ])
     }
     
 }
+

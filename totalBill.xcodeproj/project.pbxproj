@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		A0158FDD28B7B28800E178D0 /*  TotalBill.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0158FDC28B7B28800E178D0 /*  TotalBill.swift */; };
+		A0158FDF28B7B51000E178D0 /* PersonsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0158FDE28B7B51000E178D0 /* PersonsView.swift */; };
 		A0DBB84128B49E59005BE528 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0DBB84028B49E59005BE528 /* AppDelegate.swift */; };
 		A0DBB84328B49E59005BE528 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0DBB84228B49E59005BE528 /* SceneDelegate.swift */; };
 		A0DBB84528B49E59005BE528 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0DBB84428B49E59005BE528 /* MainViewController.swift */; };
@@ -17,6 +18,7 @@
 
 /* Begin PBXFileReference section */
 		A0158FDC28B7B28800E178D0 /*  TotalBill.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = " TotalBill.swift"; sourceTree = "<group>"; };
+		A0158FDE28B7B51000E178D0 /* PersonsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonsView.swift; sourceTree = "<group>"; };
 		A0DBB83D28B49E59005BE528 /* totalBill.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = totalBill.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A0DBB84028B49E59005BE528 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A0DBB84228B49E59005BE528 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -60,6 +62,7 @@
 				A0DBB84228B49E59005BE528 /* SceneDelegate.swift */,
 				A0DBB84428B49E59005BE528 /* MainViewController.swift */,
 				A0158FDC28B7B28800E178D0 /*  TotalBill.swift */,
+				A0158FDE28B7B51000E178D0 /* PersonsView.swift */,
 				A0DBB84928B49E59005BE528 /* Assets.xcassets */,
 				A0DBB84B28B49E59005BE528 /* LaunchScreen.storyboard */,
 				A0DBB84E28B49E59005BE528 /* Info.plist */,
@@ -138,6 +141,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A0DBB84528B49E59005BE528 /* MainViewController.swift in Sources */,
+				A0158FDF28B7B51000E178D0 /* PersonsView.swift in Sources */,
 				A0DBB84128B49E59005BE528 /* AppDelegate.swift in Sources */,
 				A0DBB84328B49E59005BE528 /* SceneDelegate.swift in Sources */,
 				A0158FDD28B7B28800E178D0 /*  TotalBill.swift in Sources */,
