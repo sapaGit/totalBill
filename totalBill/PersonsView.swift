@@ -26,6 +26,24 @@ class PersonsView: UIView {
         return view
     }()
     
+    lazy var minusButton: UIButton = {
+        let button = UIButton(type: .system)
+        button.setTitle("-", for: .normal)
+        button.tintColor = #colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1)
+        button.titleLabel?.font = UIFont(name:"Avenir Next", size: 80)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        return button
+    }()
+    
+    lazy var plusButton: UIButton = {
+        let button = UIButton(type: .system)
+        button.setTitle("+", for: .normal)
+        button.tintColor = #colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1)
+        button.titleLabel?.font = UIFont(name:"Avenir Next", size: 80)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        return button
+    }()
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         
@@ -42,6 +60,8 @@ class PersonsView: UIView {
         
         addSubview(titleLabel)
         addSubview(backgroundGrayView)
+        backgroundGrayView.addSubview(minusButton)
+        backgroundGrayView.addSubview(plusButton)
     }
     
     func setConstraints() {
@@ -52,8 +72,17 @@ class PersonsView: UIView {
             backgroundGrayView.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 2),
             backgroundGrayView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 0),
             backgroundGrayView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: 0),
-            backgroundGrayView.heightAnchor.constraint(equalToConstant: 100)
-
+            backgroundGrayView.heightAnchor.constraint(equalToConstant: 100),
+            
+            minusButton.topAnchor.constraint(equalTo: backgroundGrayView.topAnchor, constant: 0),
+            minusButton.leadingAnchor.constraint(equalTo: backgroundGrayView.leadingAnchor, constant: 0),
+            minusButton.heightAnchor.constraint(equalTo: backgroundGrayView.heightAnchor),
+            minusButton.widthAnchor.constraint(equalToConstant: 80),
+            
+            plusButton.topAnchor.constraint(equalTo: backgroundGrayView.topAnchor, constant: 0),
+            plusButton.trailingAnchor.constraint(equalTo: backgroundGrayView.trailingAnchor, constant: 0),
+            plusButton.heightAnchor.constraint(equalTo: backgroundGrayView.heightAnchor),
+            plusButton.widthAnchor.constraint(equalToConstant: 80)
         ])
     }
     
