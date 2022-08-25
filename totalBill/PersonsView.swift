@@ -44,6 +44,16 @@ class PersonsView: UIView {
         return button
     }()
     
+    let counterLabel: UILabel = {
+        let label = UILabel()
+        label.text = "0"
+        label.textAlignment = .center
+        label.textColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
+        label.font = UIFont(name: "Avenir Next Bold", size: 48)
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         
@@ -62,6 +72,7 @@ class PersonsView: UIView {
         addSubview(backgroundGrayView)
         backgroundGrayView.addSubview(minusButton)
         backgroundGrayView.addSubview(plusButton)
+        backgroundGrayView.addSubview(counterLabel)
     }
     
     func setConstraints() {
@@ -82,7 +93,11 @@ class PersonsView: UIView {
             plusButton.topAnchor.constraint(equalTo: backgroundGrayView.topAnchor, constant: 0),
             plusButton.trailingAnchor.constraint(equalTo: backgroundGrayView.trailingAnchor, constant: 0),
             plusButton.heightAnchor.constraint(equalTo: backgroundGrayView.heightAnchor),
-            plusButton.widthAnchor.constraint(equalToConstant: 80)
+            plusButton.widthAnchor.constraint(equalToConstant: 80),
+            
+            counterLabel.leadingAnchor.constraint(equalTo: minusButton.trailingAnchor, constant: 0),
+            counterLabel.trailingAnchor.constraint(equalTo: plusButton.leadingAnchor, constant: 0),
+            counterLabel.centerYAnchor.constraint(equalTo: backgroundGrayView.centerYAnchor)
         ])
     }
     
