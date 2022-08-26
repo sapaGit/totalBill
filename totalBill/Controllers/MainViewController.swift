@@ -20,7 +20,8 @@ class MainViewController: UIViewController {
     
     let totalBillView = TotalBillView()
     let personsView = PersonsView()
-     
+    let tipsView = TipsView()
+    
     let logoImageView: UIImageView = {
        let imageView = UIImageView()
         imageView.image = UIImage(named: "logo")
@@ -67,6 +68,7 @@ class MainViewController: UIViewController {
         view.addSubview(totalBillView)
         view.addSubview(personsView)
         view.addSubview(calculateButton)
+        view.addSubview(tipsView)
     }
 
 }
@@ -97,10 +99,15 @@ extension MainViewController {
             personsView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
             personsView.heightAnchor.constraint(equalToConstant: 130),
             
+            tipsView.topAnchor.constraint(equalTo: personsView.bottomAnchor, constant: 10),
+            tipsView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
+            tipsView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
+            tipsView.heightAnchor.constraint(equalToConstant: 130),
+            
             calculateButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -20),
             calculateButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
             calculateButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
-            calculateButton.heightAnchor.constraint(equalToConstant: 60)
+            calculateButton.heightAnchor.constraint(equalToConstant: 60),
         ])
     }
 }

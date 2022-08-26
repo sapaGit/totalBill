@@ -21,7 +21,7 @@ class TipsView: UIView {
     let collectionView: UICollectionView = {
         let collectionViewLayout = UICollectionViewFlowLayout()
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: collectionViewLayout)
-        
+        collectionView.backgroundColor = .red
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         
         return collectionView
@@ -39,8 +39,10 @@ class TipsView: UIView {
     }
     
     func setupView () {
+        translatesAutoresizingMaskIntoConstraints = false
         addSubview(titleLabel)
         addSubview(collectionView)
+        collectionView.register(TipsCollectionViewCell.self, forCellWithReuseIdentifier: "cell")
     }
     
     func setDelegates () {
