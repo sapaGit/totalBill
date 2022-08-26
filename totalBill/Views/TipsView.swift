@@ -40,10 +40,33 @@ class TipsView: UIView {
     
     func setupView () {
         addSubview(titleLabel)
+        addSubview(collectionView)
+    }
+    
+    func setDelegates () {
+        collectionView.delegate = self
+        collectionView.dataSource = self
     }
     
 }
 
+extension TipsView: UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 4
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as? TipsCollectionViewCell else { return UICollectionViewCell() }
+        
+        return cell
+    }
+    
+    
+}
+
+extension TipsView: UICollectionViewDelegate {
+    
+}
 
 extension TipsView {
     func setConstraints() {
@@ -51,6 +74,10 @@ extension TipsView {
             titleLabel.topAnchor.constraint(equalTo: topAnchor, constant: 0),
             titleLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 10),
         
+            collectionView.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 2),
+            collectionView.leadingAnchor.constraint(equalTo: leadingAnchor,constant: 0),
+            collectionView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: 0),
+            collectionView.heightAnchor.constraint(equalToConstant: 100)
         ])
     }
 }
