@@ -17,6 +17,17 @@ class TipsCollectionViewCell: UICollectionViewCell {
         return label
     }()
     
+    override var isSelected: Bool {
+        didSet {
+            if isSelected {
+                layer.borderWidth = 3
+                layer.borderColor = UIColor.purple.cgColor
+            } else {
+                layer.borderWidth = 0
+            }
+        }
+    }
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         
