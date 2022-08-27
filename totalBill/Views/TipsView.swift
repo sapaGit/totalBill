@@ -26,6 +26,7 @@ class TipsView: UIView {
         return collectionView
     }()
     
+    let tipsArray = ["0%", "10%", "15%", "20%"]
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -65,7 +66,7 @@ extension TipsView: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as? TipsCollectionViewCell else { return UICollectionViewCell() }
-        
+        cell.percentLabel.text = tipsArray[indexPath.row]
         return cell
     }
     
