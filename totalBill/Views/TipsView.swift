@@ -21,7 +21,6 @@ class TipsView: UIView {
     let collectionView: UICollectionView = {
         let collectionViewLayout = UICollectionViewFlowLayout()
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: collectionViewLayout)
-        collectionView.backgroundColor = .red
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         
         return collectionView
@@ -32,6 +31,7 @@ class TipsView: UIView {
         super.init(frame: frame)
         setupView()
         setConstraints()
+        setDelegates()
     }
     
     required init?(coder: NSCoder) {
@@ -50,6 +50,12 @@ class TipsView: UIView {
         collectionView.dataSource = self
     }
     
+}
+extension TipsView: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        CGSize(width: collectionView.frame.width/4.5,
+               height: collectionView.frame.width/4.5)
+    }
 }
 
 extension TipsView: UICollectionViewDataSource {

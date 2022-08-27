@@ -7,10 +7,21 @@
 
 import UIKit
 class TipsCollectionViewCell: UICollectionViewCell {
+    let percentLabel: UILabel = {
+        let label = UILabel()
+        label.text = "10%"
+        label.textAlignment = .center
+        label.textColor = .black
+        label.font = UIFont(name: "Avenir Next Bold", size: 24)
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         
         setupView()
+        setConstraints()
     }
     
     required init?(coder: NSCoder) {
@@ -20,5 +31,15 @@ class TipsCollectionViewCell: UICollectionViewCell {
     func setupView() {
         backgroundColor = #colorLiteral(red: 0.9561659694, green: 0.9591339231, blue: 0.9530903697, alpha: 1)
         layer.cornerRadius = 10
+        addSubview(percentLabel)
+    }
+    
+    func setConstraints() {
+        NSLayoutConstraint.activate([
+            percentLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 2),
+            percentLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: 2),
+            percentLabel.centerYAnchor.constraint(equalTo: centerYAnchor),
+            percentLabel.heightAnchor.constraint(equalTo: heightAnchor)
+        ])
     }
 }
