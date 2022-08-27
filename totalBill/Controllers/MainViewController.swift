@@ -58,6 +58,7 @@ class MainViewController: UIViewController {
        
         setupViews()
         setConstraints()
+        addTap()
     }
     
     func setupViews() {
@@ -85,6 +86,15 @@ class MainViewController: UIViewController {
             let result = summ / personsView.counter
             descriptionLabel.text = "\(result) per person"
         }
+    }
+    
+    func addTap() {
+        let tap = UITapGestureRecognizer(target: self, action: #selector(hideKeyboard))
+        view.addGestureRecognizer(tap)
+    }
+    
+    @objc func hideKeyboard() {
+        view.endEditing(true)
     }
 
 }
