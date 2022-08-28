@@ -123,7 +123,7 @@ extension MainViewController {
             totalBillView.topAnchor.constraint(equalTo: descriptionLabel.bottomAnchor, constant: 10),
             totalBillView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
             totalBillView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
-            totalBillView.heightAnchor.constraint(equalToConstant: 130),
+            totalBillView.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.14),
             
             personsView.topAnchor.constraint(equalTo: totalBillView.bottomAnchor, constant: 10),
             personsView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
