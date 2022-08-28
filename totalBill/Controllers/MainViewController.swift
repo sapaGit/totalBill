@@ -128,7 +128,7 @@ extension MainViewController {
             personsView.topAnchor.constraint(equalTo: totalBillView.bottomAnchor, constant: 10),
             personsView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
             personsView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
-            personsView.heightAnchor.constraint(equalToConstant: 130),
+            personsView.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.14),
             
             tipsView.topAnchor.constraint(equalTo: personsView.bottomAnchor, constant: 10),
             tipsView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),

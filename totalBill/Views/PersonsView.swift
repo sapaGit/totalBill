@@ -52,7 +52,6 @@ class PersonsView: UIView {
         label.text = "0"
         label.textAlignment = .center
         label.textColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
-        label.font = UIFont(name: "Avenir Next Bold", size: 48)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -68,6 +67,13 @@ class PersonsView: UIView {
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        
+        titleLabel.font = UIFont(name: "Avenir Next", size: frame.width/26.7)
+        counterLabel.font = UIFont(name: "Avenir Next Bold", size: frame.height/2.6)
     }
     
     func setupView() {
@@ -98,11 +104,12 @@ class PersonsView: UIView {
         NSLayoutConstraint.activate([
             titleLabel.topAnchor.constraint(equalTo: topAnchor, constant: 0),
             titleLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 10),
+            titleLabel.heightAnchor.constraint(equalToConstant: 14),
             
             backgroundGrayView.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 2),
             backgroundGrayView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 0),
             backgroundGrayView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: 0),
-            backgroundGrayView.heightAnchor.constraint(equalToConstant: 100),
+            backgroundGrayView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: 0),
             
             minusButton.topAnchor.constraint(equalTo: backgroundGrayView.topAnchor, constant: 0),
             minusButton.leadingAnchor.constraint(equalTo: backgroundGrayView.leadingAnchor, constant: 0),

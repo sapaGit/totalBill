@@ -22,7 +22,6 @@ class TotalBillView: UIView {
         textField.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
         textField.layer.cornerRadius = 10
         textField.textColor = .black
-        textField.font = UIFont(name: "Avenir Next Bold", size: 48)
         textField.textAlignment = .center
         textField.keyboardType = .numberPad
         textField.translatesAutoresizingMaskIntoConstraints = false
@@ -58,6 +57,7 @@ class TotalBillView: UIView {
         NSLayoutConstraint.activate([
             titleLabel.topAnchor.constraint(equalTo: topAnchor, constant: 0),
             titleLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 10),
+            titleLabel.heightAnchor.constraint(equalToConstant: 14),
             
             summTextField.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 2),
             summTextField.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 0),
