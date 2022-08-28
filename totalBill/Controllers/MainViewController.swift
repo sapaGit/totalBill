@@ -13,7 +13,7 @@ class MainViewController: UIViewController {
         let label = UILabel()
         label.text = "Total Bill"
         label.textColor = .black
-        label.font = UIFont(name: "Avenir Next Bold", size: 40)
+//        label.font = UIFont(name: "Avenir Next Bold", size: 40)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -33,7 +33,9 @@ class MainViewController: UIViewController {
         let label = UILabel()
         label.text = "Enter the invoice amount and click \"Calculate\""
         label.textColor = .black
-        label.numberOfLines = 0
+//        label.numberOfLines = 0
+        label.adjustsFontSizeToFitWidth = true
+        label.minimumScaleFactor = 0.7
         label.textAlignment = .center
         label.font = UIFont(name: "Avenir Next Bold", size: 15)
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -65,6 +67,8 @@ class MainViewController: UIViewController {
         view.backgroundColor = #colorLiteral(red: 0.9764705882, green: 0.9764705882, blue: 0.9764705882, alpha: 1)
         
         view.addSubview(titleLabel)
+        titleLabel.font = UIFont(name: "Avenir Next Bold", size: view.frame.height * 0.046)
+        
         view.addSubview(logoImageView)
         view.addSubview(descriptionLabel)
         view.addSubview(totalBillView)
@@ -107,8 +111,8 @@ extension MainViewController {
             titleLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             
             logoImageView.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 10),
-            logoImageView.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.5),
-            logoImageView.heightAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.3),
+            logoImageView.widthAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.26),
+            logoImageView.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.23),
             logoImageView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             
             descriptionLabel.topAnchor.constraint(equalTo: logoImageView.bottomAnchor, constant: 15),
