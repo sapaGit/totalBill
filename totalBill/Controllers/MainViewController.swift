@@ -85,7 +85,7 @@ class MainViewController: UIViewController {
         let summ = totalBillInt + totalBillInt * tipsView.tipsCount / 100
        
         
-        if personsView.counter == 0 {
+        if personsView.counter < 2 {
             descriptionLabel.text = "Enter persons count"
             descriptionLabel.textColor = .red
         } else {
