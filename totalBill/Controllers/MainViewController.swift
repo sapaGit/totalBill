@@ -81,7 +81,12 @@ class MainViewController: UIViewController {
     }
     @objc func calculateButtonTapped() {
         guard let totalBill = totalBillView.summTextField.text,
-        let totalBillInt = Int(totalBill) else { return }
+        let totalBillInt = Int(totalBill) else {
+            descriptionLabel.text = "Enter total Bill"
+            descriptionLabel.textColor = .red
+            return
+            
+        }
         let summ = totalBillInt + totalBillInt * tipsView.tipsCount / 100
        
         
