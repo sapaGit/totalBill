@@ -12,7 +12,6 @@ class TipsCollectionViewCell: UICollectionViewCell {
         label.text = "10%"
         label.textAlignment = .center
         label.textColor = .black
-        label.font = UIFont(name: "Avenir Next Bold", size: 24)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -39,8 +38,14 @@ class TipsCollectionViewCell: UICollectionViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        
+        percentLabel.font = UIFont(name: "Avenir Next Bold", size: frame.height/3.4)
+        
+    }
     func setupView() {
-        backgroundColor = #colorLiteral(red: 0.9561659694, green: 0.9591339231, blue: 0.9530903697, alpha: 1)
+        backgroundColor = .white
         layer.cornerRadius = 10
         addSubview(percentLabel)
     }
@@ -49,8 +54,7 @@ class TipsCollectionViewCell: UICollectionViewCell {
         NSLayoutConstraint.activate([
             percentLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 2),
             percentLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: 2),
-            percentLabel.centerYAnchor.constraint(equalTo: centerYAnchor),
-            percentLabel.heightAnchor.constraint(equalTo: heightAnchor)
+            percentLabel.centerYAnchor.constraint(equalTo: centerYAnchor)
         ])
     }
 }

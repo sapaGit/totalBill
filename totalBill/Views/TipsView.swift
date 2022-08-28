@@ -13,7 +13,6 @@ class TipsView: UIView {
         let label = UILabel()
         label.text = "Tips"
         label.textColor = #colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1)
-        label.font = UIFont(name: "Avenir Next", size: 14)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -22,6 +21,7 @@ class TipsView: UIView {
         let collectionViewLayout = UICollectionViewFlowLayout()
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: collectionViewLayout)
         collectionView.translatesAutoresizingMaskIntoConstraints = false
+        collectionView.layer.cornerRadius = 10
         
         return collectionView
     }()
@@ -50,6 +50,7 @@ class TipsView: UIView {
         addSubview(titleLabel)
         addSubview(collectionView)
         collectionView.register(TipsCollectionViewCell.self, forCellWithReuseIdentifier: "cell")
+        collectionView.backgroundColor = #colorLiteral(red: 0.9764705882, green: 0.9764705882, blue: 0.9764705882, alpha: 1)
     }
     
     func setDelegates () {
@@ -60,8 +61,8 @@ class TipsView: UIView {
 }
 extension TipsView: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        CGSize(width: collectionView.frame.width/4.5,
-               height: collectionView.frame.width/4.5)
+        CGSize(width: collectionView.frame.width/5,
+               height: collectionView.frame.width/5)
     }
 }
 

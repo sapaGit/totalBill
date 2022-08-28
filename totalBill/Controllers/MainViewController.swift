@@ -49,7 +49,7 @@ class MainViewController: UIViewController {
         button.backgroundColor = #colorLiteral(red: 0.1764705926, green: 0.01176470611, blue: 0.5607843399, alpha: 1)
         button.layer.cornerRadius = 10
         button.addTarget(self, action: #selector(calculateButtonTapped), for: .touchUpInside)
-        button.titleLabel?.font = UIFont(name:"Avenir Next", size: 20)
+//        button.titleLabel?.font = UIFont(name:"Avenir Next", size: 20)
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
@@ -72,9 +72,12 @@ class MainViewController: UIViewController {
         view.addSubview(logoImageView)
         view.addSubview(descriptionLabel)
         view.addSubview(totalBillView)
+        view.addSubview(tipsView)
         view.addSubview(personsView)
         view.addSubview(calculateButton)
-        view.addSubview(tipsView)
+        
+        
+        calculateButton.titleLabel?.font = UIFont(name:"Avenir Next Bold", size: view.frame.height/44)
     }
     @objc func calculateButtonTapped() {
         guard let totalBill = totalBillView.summTextField.text,
@@ -135,10 +138,10 @@ extension MainViewController {
             tipsView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
             tipsView.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.14),
             
-            calculateButton.topAnchor.constraint(equalTo: tipsView.bottomAnchor, constant: 5),
+            calculateButton.topAnchor.constraint(equalTo: tipsView.bottomAnchor, constant: 10),
             calculateButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
             calculateButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
-            calculateButton.heightAnchor.constraint(equalToConstant: 60),
+            calculateButton.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.06),
         ])
     }
 }
